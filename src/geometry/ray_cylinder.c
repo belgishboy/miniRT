@@ -165,11 +165,17 @@ double	cap_intersection(t_obj cyl, t_vec ray_or, t_vec ray, int d)
 	}
 	if (cap1 < 0 && cap2 < 0)
 		return (-100);
-	if (cap1 >= 0 && (cap1 < cap2 && cap2 > 0 || cap1 > cap2 && cap2 < 0))
-		return (cap1);
-	if (cap2 >= 0 && (cap2 < cap1 && cap1 > 0 || cap2 > cap1 && cap1 < 0))
+	if (cap1 > 0 && cap2 > 0)
+	{
+		if (cap1 < cap2)
+			return(cap1);
 		return (cap2);
-	return (-2);
+	}
+	if (cap1 > 0)
+		return(cap1);
+	if (cap2 > 0)
+		return(cap2);
+	return (-200);
 }
 
 double	hit_cylinder(t_obj cyl, t_vec ray_or, t_vec ray_dir, t_bool *is_cap)

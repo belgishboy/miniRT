@@ -33,6 +33,10 @@ $(NAME): $(OBJ) inc/minirt.h
 	@make -C mlx/
 	$(CC) $(FLAGS) -Lmlx -lmlx -L/usr/X11/include/../lib -lXext -lX11 -lm $(OBJ) mlx/libmlx.a lft/libft.a -o $@
 
+
+debug: 
+	$(CC) $(FLAGS) -o cond ./debug_talk/debug_conduit.c
+
 %.o: %.c inc/minirt.h
 	$(CC) $(FLAGS) -Imlx -c $< -o $@
 

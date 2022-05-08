@@ -22,6 +22,8 @@
 **	INCLUDES
 */
 
+# include <signal.h> // signal Sigaction
+
 # include <stdio.h>	//  printf, perror
 # include <math.h>	//  math lol
 # include <fcntl.h> // open

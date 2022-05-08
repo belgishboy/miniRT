@@ -43,7 +43,7 @@ int	nachfolger(int x, int y, t_mrt *mrt, t_vec *scr, t_data *img, t_bool p)
 	t_vec	ray;
 	t_vec	norm;
 
-	t_bool	is_cap = FALSE;
+	t_bool	is_cap;
 
 	near = NULL;
 	old_d = RENDER_DISTANCE;

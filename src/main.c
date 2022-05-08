@@ -1,5 +1,99 @@
 #include "../inc/minirt.h"
 
+//############################################################
+
+// debugging functions to enter numbers without mouse hook
+
+// i tried to implement my code but failed, then i took hendricks minitalk code
+//	it workd for the first 7 characters si i guess i take that and run with it
+
+t_mrt	*g_mrt;
+
+typedef struct s_msg
+{
+	char	c;
+	int		size;
+}			t_msg;
+
+int	inputcheck(char *inp)
+{
+	int	i;
+
+	i = 0;
+	while (inp[i])
+	{
+		if (!ft_isdigit(inp[i]) && inp[i] != ' ')
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+void	hennetrace(char *input)
+{
+	int x;
+	int y;
+	t_vec	ray;
+	t_vec	*scr;
+
+	input[7] = '\0';
+	if (inputcheck(input))
+		printf("recieved string : %s. please only enter 2 numbers of up to 3 digits, delimeted by a space", input);
+	x = ft_atoi(input);
+	y = ft_atoi(ft_strchr(input, ' '));
+
+	scr = scream(g_mrt->cam);
+	printf("ray trough x %i, y %i\n", x, y);
+	ray = single_ray(x - (WDTH/2), y - (HGHT/2), g_mrt->cam, scr);
+	nachfolger(x, y, g_mrt, scr, NULL, TRUE);
+}
+
+char	*ft_input(char c)
+{
+	static char	*str;
+	int			i;
+
+	if (!str)
+		str = ft_calloc(3, 1);
+	str = ft_realloc(str, ft_strlen(str), 1);
+	i = 0;
+	while (str[i])
+		i++;
+	str[i] = c;
+	if (c == '\0')
+	{
+		hennetrace(str);
+		free(str);
+		str = NULL;
+		return (str);
+	}
+	return (NULL);
+}
+
+
+
+void	receive(int bit, siginfo_t *siginfo, void *context)
+{
+	static t_msg	msg;
+
+	if (bit == SIGUSR1)
+		msg.c += (0 << msg.size);
+	if (bit == SIGUSR2)
+		msg.c += (1 << msg.size);
+	msg.size++;
+	if (msg.size == 8)
+	{
+		ft_input(msg.c);
+		msg.c = 0;
+		msg.size = 0;
+	}
+	kill(siginfo->si_pid, SIGUSR1);
+	(void) context;
+}
+
+//############################################################
+
+
 
 void	limit(double *var, double upper, double lower)
 {
@@ -210,6 +304,16 @@ int	key_hook(int key, t_mrt *mrt)
 int	main(int argc, char **argv)
 {
 	t_mrt	mrt;
+	struct sigaction	sig;
+
+	g_mrt = &mrt;
+	sig.sa_sigaction = &receive;
+	sig.sa_flags = SA_SIGINFO;
+	sigaction(SIGUSR1, &sig, NULL);
+	sigaction(SIGUSR2, &sig, NULL);
+	write(1, "PID: ", 5);
+	ft_putnbr_base(getpid(), "0123456789");
+	write(1, "\n", 1);
 
 	if (argc != 2)
 	{
