@@ -1,6 +1,6 @@
 NAME = miniRT
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra
 
 SR = ./src/
 EX = $(SR)exit/

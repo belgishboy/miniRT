@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rearrange.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vheymans <vheymans@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/10 17:44:44 by vheymans          #+#    #+#             */
+/*   Updated: 2022/05/11 22:33:26 by vheymans         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/minirt.h"
 
 t_obj	*line_obj(t_vec	origin, t_vec direction, char color)
@@ -56,9 +68,9 @@ void	origin(t_mrt *mrt, int i)
 void	light(t_mrt *mrt, int key)
 {
 	if (key == 43)
-		mrt->l->lr *= 1.125;
+		mrt->l->lr += 0.125;
 	if (key == 45)
-		mrt->l->lr *= 0.875;
+		mrt->l->lr -= 0.125;
 	if (key == 119)
 		mrt->l->cor.z += 5;
 	if (key == 97)
