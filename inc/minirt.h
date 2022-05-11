@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minirt.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cdahlhof <cdahlhof@student.42wolfsburg.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/10 17:40:18 by cdahlhof          #+#    #+#             */
+/*   Updated: 2022/05/11 14:19:19 by cdahlhof         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MINIRT_H
 # define MINIRT_H
 
@@ -121,6 +133,7 @@ char	**split_wh(char const *s);
 int		count_input(t_list *lst, int *count, char *tmp);
 int		check_count(int *count);
 void	limit(double *var, double upper, double lower);
+double	i_limit(double var, double upper, double lower);
 
 //INITIALIZATION
 
@@ -156,7 +169,7 @@ void	origin(t_mrt *mrt, int i);
 t_obj	*line_obj(t_vec	origin, t_vec direction, char color);
 void	expand_obj(t_mrt *mrt);
 void	flip(t_mrt *mrt);
-int		color(t_mrt *mrt, t_obj *near, char c);
+int		color(t_mrt *mrt, t_obj *near, char c, double bright);
 void	calc(t_mrt *mrt);
 double	hell(t_vec *norm, t_vec *light, t_vec *ray);
 
