@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_sphere.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdahlhof <cdahlhof@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: vheymans <vheymans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 17:44:10 by cdahlhof          #+#    #+#             */
-/*   Updated: 2022/05/10 17:44:13 by cdahlhof         ###   ########.fr       */
+/*   Created: 2022/05/10 17:44:10 by vheymans          #+#    #+#             */
+/*   Updated: 2022/05/11 22:33:26 by vheymans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

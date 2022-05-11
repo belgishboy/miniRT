@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdahlhof <cdahlhof@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: vheymans <vheymans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 17:40:58 by cdahlhof          #+#    #+#             */
-/*   Updated: 2022/05/10 17:41:03 by cdahlhof         ###   ########.fr       */
+/*   Created: 2022/05/10 17:40:58 by vheymans          #+#    #+#             */
+/*   Updated: 2022/05/11 22:33:26 by vheymans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

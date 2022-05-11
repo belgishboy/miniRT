@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cdahlhof <cdahlhof@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: vheymans <vheymans@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 17:43:04 by cdahlhof          #+#    #+#             */
-/*   Updated: 2022/05/10 17:43:06 by cdahlhof         ###   ########.fr       */
+/*   Created: 2022/05/10 17:43:04 by vheymans          #+#    #+#             */
+/*   Updated: 2022/05/11 22:33:26 by vheymans         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
